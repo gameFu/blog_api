@@ -11,4 +11,5 @@
 
 class Admin < ApplicationRecord
   include JsonWebTokenAble
+  has_secure_password
 end
