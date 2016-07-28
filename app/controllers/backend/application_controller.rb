@@ -12,7 +12,6 @@ class Backend::ApplicationController < ApplicationController
   end
 
   def auth_error_handle(error)
-    
     response_with_errors error, status: 401
   end
 end
