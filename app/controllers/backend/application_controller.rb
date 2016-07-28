@@ -16,4 +16,19 @@ class Backend::ApplicationController < ApplicationController
     response_with_errors error, 401
   end
 
+  def current_user
+    @current_user ||= login_user
+  end
+
+  def login_user
+    authenticate_with_http_token do |token, _options|
+      if decode_token = JWT.decode token, ENV['jwt_secret'], true, { :algorithm => ENV['jwt_algorithm'] }
+        @current_user = Admin.find(decode_token[0]['admin']['user_id'])
+      else
+        raise AuthError, '授权错误'
+      end
+    end
+    @current_user
+  end
+
 end
