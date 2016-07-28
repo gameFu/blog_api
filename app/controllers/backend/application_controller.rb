@@ -7,11 +7,13 @@ class Backend::ApplicationController < ApplicationController
     response_with_errors error
   end
 
+
   def response_with_errors(error, status=400)
     render json: {errors: error}, status: status
   end
 
   def auth_error_handle(error)
-    response_with_errors error, status: 401
+    response_with_errors error, 401
   end
+
 end

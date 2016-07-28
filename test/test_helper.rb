@@ -6,5 +6,9 @@ class ActiveSupport::TestCase
   include FactoryGirl::Syntax::Methods
   include Backend::JsonWebTokenHelper
 
+  def response_json
+    ActiveSupport::JSON.decode @response.body
+  end
+
   # Add more helper methods to be used by all tests here...
 end
