@@ -1,4 +1,5 @@
 class Backend::SessionsController < Backend::ApplicationController
+  skip_before_action :authenticate_admin_request
 
   def create
     admin = Admin.find_by_name(params[:name])

@@ -13,6 +13,9 @@ gem 'pg'
 # has_secure_password
 gem 'bcrypt'
 
+#ams
+gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
+
 group :development, :test do
   # env
   gem 'dotenv-rails'
