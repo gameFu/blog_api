@@ -1,6 +1,7 @@
 default: &default
   adapter: postgresql
-  pool: 5
+  # puma默认线程是16 连接数应与线程数对应
+  pool: 16
   encoding: unicode
   timeout: 5000
   username: <%= ENV['DB_USER'] || 'fugeng' %>
