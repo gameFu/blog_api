@@ -16,8 +16,9 @@ gem 'bcrypt'
 #ams
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 
-# qiniu
-gem 'carrierwave-qiniu'
+gem 'carrierwave'
+gem 'carrierwave-qiniu', '~> 0.1.5'
+gem 'mini_magick', '~> 4.0.0.rc'
 
 group :development, :test do
   # env
