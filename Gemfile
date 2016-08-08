@@ -20,6 +20,9 @@ gem 'carrierwave'
 gem 'carrierwave-qiniu', '~> 0.1.5'
 gem 'mini_magick', '~> 4.0.0.rc'
 
+# rails default settings
+gem "rails-settings-cached"
+
 group :development, :test do
   # env
   gem 'dotenv-rails'

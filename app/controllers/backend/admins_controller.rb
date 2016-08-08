@@ -10,7 +10,7 @@ class Backend::AdminsController < Backend::ApplicationController
 
   private
   def admin_params
-    params.require(:admin).permit(:name, :avater, :password, :password_confirmation)
+    params.require(:admin).permit(:name, :avatar, :password, :password_confirmation)
   end
 
 end
